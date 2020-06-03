@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-    <div class="header-input">输入要搜素的新闻!</div>
+    <div class="header-input">
+      <input placeholder="输入需要搜索的新闻">
+      <div class="iconfont select">&#xe7b8;</div>
+    </div>
   </div>
 </template>
 
@@ -24,9 +27,18 @@ export default {
     height: 2.5rem;
     line-height: 2.5rem;
     border-radius: 5rem;
-    color: #bbbbbb;
-    margin: 0 .5rem;
-    margin-top: .3rem;
-    margin-bottom: .3rem;
+    color: #000000;
+    margin: .2rem .5rem;
+  }
+  .select{
+    float: right;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+  }
+  input{
+    height: 90%;
+    width: 85%;
+    border: none;
   }
 </style>

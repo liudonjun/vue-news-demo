@@ -31,7 +31,7 @@ export default {
   .active{
     border: 1px solid #ffffff;
     background: #1fa3fe;
-    border-radius: 1.3rem;
+    border-radius: 2rem;
   }
   .link {
     height: 3.2rem;
@@ -53,6 +53,7 @@ export default {
   }
   a{
     color: white;
+    text-decoration: none;
   }
 
 </style>
