@@ -2,7 +2,6 @@
   <div><home-header>
     </home-header>
     <tab-item></tab-item>
-    <slide-show></slide-show>
   </div>
 </template>
 
@@ -14,7 +13,7 @@ import SlideShow from './components/Slide'
 export default {
   name: 'Home',
   components: {
-    HomeHeader, TabItem ,SlideShow
+    HomeHeader, TabItem
   }
 }
 </script>
