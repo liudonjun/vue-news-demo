@@ -18,6 +18,7 @@
           pagination: {
             el: '.swiper-pagination'
           },
+          autoplay:true,
           loop:true
         },
         swiperlist: [{
