@@ -8,7 +8,7 @@ Software architecture description
 
 #### Installation
 
-1.  xxxx
+1.  vue-awesomem-swiper
 2.  xxxx
 3.  xxxx
 

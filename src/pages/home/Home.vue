@@ -2,18 +2,19 @@
   <div><home-header>
     </home-header>
     <tab-item></tab-item>
+    <home-swiper></home-swiper>
   </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
 import TabItem from './components/Tab'
-import SlideShow from './components/Slide'
+import HomeSwiper from './components/Swiper'
 
 export default {
   name: 'Home',
   components: {
-    HomeHeader, TabItem
+    HomeHeader, TabItem,HomeSwiper
   }
 }
 </script>
