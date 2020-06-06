@@ -37,6 +37,11 @@ export default {
     height: 3.2rem;
     background: #0197fe;
     display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 2.86rem;
+    z-index: 1000;
   }
   ul {
     flex-wrap: nowrap;

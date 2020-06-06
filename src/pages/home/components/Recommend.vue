@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendlist":key="item.id">
+      <li class="item border-bottom" v-for="item of recommendlist" :key="item.id">
         <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -27,24 +27,36 @@
             title: '趣味剖析Spring5核心原理',
             writer: '搜狐新闻',
             updata: '2019.8.4'
-          },{
+          }, {
             id: '002',
             imgUrl: 'https://img1.mukewang.com/5eb68ac10001029202940333.jpg',
             title: 'Python 源码深度剖析',
             writer: '搜狐新闻',
             updata: '2020.8.1'
-          },{
+          }, {
             id: '003',
             imgUrl: 'https://img2.mukewang.com/5e9cfd150001349b02940333.jpg',
             title: 'SpringBoot 趣味私房课',
             writer: '搜狐新闻',
             updata: '2019.8.4'
-          },{
+          }, {
             id: '004',
             imgUrl: 'https://img2.mukewang.com/5e9cfd150001349b02940333.jpg',
             title: 'SpringBoot 趣味私房课',
             writer: '搜狐新闻',
             updata: '2019.8.4'
+          }, {
+            id: '005',
+            imgUrl: 'https://img4.mukewang.com/5e906f130001f14802940333.jpg',
+            title: '趣味剖析Spring5核心原理',
+            writer: '搜狐新闻',
+            updata: '2019.8.4'
+          }, {
+            id: '006',
+            imgUrl: 'https://img1.mukewang.com/5eb68ac10001029202940333.jpg',
+            title: 'Python 源码深度剖析',
+            writer: '搜狐新闻',
+            updata: '2020.8.1'
           }
         ]
       }
