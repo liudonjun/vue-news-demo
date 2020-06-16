@@ -1,13 +1,16 @@
 <template>
   <div class="header">
-    <div class="home-icon"><p> 🐟 假装这是icon</p></div>
+    <div>
+      <img class="icon-img" src="../../../assets/images/icon.jpg">
+    </div>
+    <div class="home-icon"></div>
     <div class="button-right">
       <router-link to="/seek">
         <div class="iconfont select">&#xe7b8;</div>
       </router-link>
     </div>
-    <router-link to="/seek">
-    <div class="userinfo iconfont"><img class="userimg" src="../../../assets/images/tp.png" alt=""></div>
+    <router-link to="/login">
+      <div class="userinfo iconfont"><img class="userimg" src="../../../assets/images/tp.png"></div>
     </router-link>
   </div>
 </template>
@@ -36,15 +39,15 @@
     display: flex;
     flex: 1;
   }
-  p{
+
+  p {
     height: 2.5rem;
     text-align: center;
     line-height: 2.5rem;
-    border-radius: 2rem;
-    margin: .1rem ;
-    background: white;
+    margin: .1rem;
   }
 
+  /*头像*/
   .userinfo {
     margin: .3rem;
     width: 2.2rem;
@@ -55,11 +58,24 @@
     background-image: url("../../../assets/images/background.png");
     border-radius: 2rem;
   }
-  .userimg{
+
+  /*logo*/
+  .icon-img {
+    margin: .3rem 0 0 1rem;
+    /*width: 2.2rem;*/
+    overflow: hidden;
+    height: 2.2rem;
+    line-height: 2.86rem;
+    border-radius: .8rem 2rem 2rem .8rem;
+
+  }
+
+  .userimg {
     width: 2.2rem;
     height: 2.2rem;
   }
-  .button-right{
+
+  .button-right {
     right: -10rem;
   }
 
@@ -70,7 +86,8 @@
     font-size: 2rem;
     margin-right: .5rem;
   }
-  a{
+
+  a {
     display: block;
     list-style: none;
     text-decoration: none;
