@@ -5,9 +5,9 @@
       <li
         @click="addClass(item,idx)"
         v-for="(item,idx) of items"
-        :class=" idx == index ? 'active':''"
+        :class=" idx == index ? 'active':'unactive'"
         :key="idx">
-        <router-link to="" class="a">{{item.title}}</router-link>
+        <router-link :to="item.tolist" class="a">{{item.title}}</router-link>
       </li>
     </ul>
   </div>
@@ -22,23 +22,28 @@
         items: [
           {
             id: '001',
-            title: '推荐'
+            title: '推荐',
+            tolist:'/TopNews'
           },
           {
             id: '002',
-            title: '热点'
+            title: '社会',
+            tolist:'/ShNews'
           },
           {
             id: '003',
-            title: '娱乐'
+            title: '娱乐',
+            tolist:'/YlNews'
           },
           {
             id: '004',
-            title: '财经'
+            title: '财经',
+            tolist:'/CjNews'
           },
           {
             id: '005',
-            title: '旅游'
+            title: '时尚',
+            tolist:'/SsNews'
           }
         ]
       }
@@ -56,6 +61,14 @@
   .active {
     border: 1px solid #ffffff;
     background: #1fa3fe;
+    border-radius: 2rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .unactive {
+    border: 1px solid #0197fe;
+    background: #0197fe;
     border-radius: 2rem;
     color: white;
     text-decoration: none;

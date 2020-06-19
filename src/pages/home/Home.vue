@@ -2,8 +2,7 @@
   <div>
       <home-header></home-header>
       <tab-item></tab-item>
-    <home-swiper></home-swiper>
-    <home-recommend></home-recommend>
+    <router-view></router-view>
   </div>
 </template>
 

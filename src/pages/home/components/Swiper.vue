@@ -65,6 +65,7 @@
     background: url("../../../assets/images/background.png");
     background-size: cover;
     -moz-background-size: cover;
+    height: 100%;
   }
 
   .swiper-img {
