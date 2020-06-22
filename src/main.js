@@ -12,10 +12,16 @@ import 'swiper/css/swiper.css'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import axios from 'axios'
+
+Vue.prototype.$axios = axios
+axios.defaults.baseURL = '/api'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+
+
 
 /* eslint-disable no-new */
 new Vue({
