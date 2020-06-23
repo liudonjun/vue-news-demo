@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div>
-      <img class="icon-img" src="../../../assets/images/icon.jpg">
+      <img class="icon-img" src="../../../assets/images/icon.jpg" @click="backTop()">
     </div>
     <div class="home-icon"></div>
     <div class="button-right">
@@ -17,7 +17,13 @@
 
 <script>
   export default {
-    name: 'Header'
+    name: 'Header',
+    methods: {
+      backTop() {
+        document.body.scrollTop = 0
+        document.documentElement.scrollTop = 0
+      }
+    }
   }
 </script>
 

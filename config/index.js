@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {//接口
-        target: 'http://v.juhe.cn',//要访问的源
+        target: 'https://api.jisuapi.com',//要访问的源
         changeOrigin: true,
         pathRewrite:{  // 路径重写，
           '^/api': ''

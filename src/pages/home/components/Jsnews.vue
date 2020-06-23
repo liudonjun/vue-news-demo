@@ -1,39 +1,40 @@
 <template>
   <div>
     <div class="pd6"></div>
-    <ul>
-      <li class="item border-bottom" v-for="(item,index) of data" :key="index">
-        <img class="item-img" :src="item.thumbnail_pic_s">
-        <div class="item-info">
-          <p class="item-title">{{item.title}}</p>
-          <div class="item-bottom">
-            <p class="item-writer">{{item.author_name}}</p>
-            <p class="item-updata">{{item.date}}</p>
+    <div>
+      <ul>
+        <li class="item border-bottom" v-for="(item,index) of data" :key="index">
+          <img class="item-img" :src="item.pic">
+          <div class="item-info">
+            <p class="item-title">{{item.title}}</p>
+            <div class="item-bottom">
+              <p class="item-writer">{{item.src}}</p>
+              <p class="item-updata">{{item.time}}</p>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 
 </template>
 
 <script>
   export default {
-    name: 'ShNews',
+    name: 'JsNews',
     data () {
       return {
-        data:[]
+        data: []
       }
     },
     mounted () {
-      this.$axios.get('toutiao/index?type=shehui&key=f282cb150846539128165be835767d3a')
+      this.$axios.get('news/get?channel=军事&start=0&num=20&appkey=8f2abc867fcf2aa5')
         .then(response => (
-          this.result = response.data,
-            this.data = response.data.result.data
+          this.data = response.data.result.list
         ))
         .catch(function (error) { // 请求失败处理
-          console.log(error);
-        });
+          console.log(error)
+        })
     }
   }
 </script>
@@ -47,6 +48,7 @@
     height: 0;
     /*padding-bottom: 56%;*/
   }
+
   .item {
     overflow: hidden;
     display: flex;
@@ -81,7 +83,7 @@
 
   .item-bottom {
     margin-top: .5rem;
-    margin-right: 6.5rem;
+    margin-right: 4rem;
     text-align: center;
     background: #f8f8f8;
     border-left: .5rem solid #0197fe;
@@ -91,4 +93,5 @@
     margin-top: .2rem;
     color: #f39800;
   }
+
 </style>

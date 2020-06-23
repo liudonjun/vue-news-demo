@@ -27,23 +27,23 @@
           },
           {
             id: '002',
-            title: '社会',
-            tolist:'/ShNews'
-          },
-          {
-            id: '003',
-            title: '娱乐',
-            tolist:'/YlNews'
-          },
-          {
-            id: '004',
             title: '财经',
             tolist:'/CjNews'
           },
           {
+            id: '003',
+            title: '体育',
+            tolist:'/TyNews'
+          },
+          {
+            id: '004',
+            title: '娱乐',
+            tolist:'/YlNews'
+          },
+          {
             id: '005',
-            title: '时尚',
-            tolist:'/SsNews'
+            title: '军事',
+            tolist:'/JsNews'
           }
         ]
       }

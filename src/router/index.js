@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Seek from '@/pages/seek/Seek'
 import Login from '@/pages/login/Login'
+import Detail from '@/pages/detail/Detail'
 import TopNews from '@/pages/home/components/TopNews'
-import ShNews from '@/pages/home/components/ShNews'
+import TyNews from '@/pages/home/components/TyNews'
 import YlNews from '@/pages/home/components/YlNews'
 import CjNews from '@/pages/home/components/CjNews'
-import SsNews from '@/pages/home/components/SsNews'
+import JsNews from '@/pages/home/components/JsNews'
 
 Vue.use(Router)
 
@@ -24,9 +25,9 @@ export default new Router({
           name: 'TopNews',
           component: TopNews
         }, {
-          path: '/ShNews',
-          name: 'ShNews',
-          component: ShNews
+          path: '/TyNews',
+          name: 'TyNews',
+          component: TyNews
         }, {
           path: '/YlNews',
           name: 'YlNews',
@@ -36,18 +37,22 @@ export default new Router({
           name: 'CjNews',
           component: CjNews
         }, {
-          path: '/SsNews',
-          name: 'SsNews',
-          component: SsNews
+          path: '/JsNews',
+          name: 'JsNews',
+          component: JsNews
         }],
     }, {
       path: '/Seek',
       name: 'Seek',
       component: Seek
     }, {
-      path: '/login',
+      path: '/Login',
       name: 'Login',
       component: Login
+    }, {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })
