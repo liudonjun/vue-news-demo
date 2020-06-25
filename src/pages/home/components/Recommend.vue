@@ -28,8 +28,14 @@
         data: []
       }
     },
+    // methods: {
+    //   toDetail(content) {
+    //     this.$router.push({path:"/Detail",query:{content:this.content}})
+    //     console.log(content)
+    //   }
+    // },
     mounted () {
-      this.$axios.get('news/get?channel=头条&start=0&num=20&appkey=8f2abc867fcf2aa5')
+      this.$axios.get('news/get?channel=头条&start=0&num=20&appkey=2deae84444e749f0')
         .then(response => (
           this.data = response.data.result.list
         ))

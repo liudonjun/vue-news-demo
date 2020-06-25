@@ -20,8 +20,13 @@
     name: 'Header',
     methods: {
       backTop() {
-        document.body.scrollTop = 0
-        document.documentElement.scrollTop = 0
+        // document.body.scrollTop = 0
+        // document.documentElement.scrollTop = 0
+        var doc= document.documentElement;
+        $(doc).animate({
+          scrollTop:0,
+          height:'slideUp'
+        },500)
       }
     }
   }

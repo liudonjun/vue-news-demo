@@ -1,7 +1,8 @@
 <template>
   <div>
-    <router-link to="/"><img src="../../assets/images/tp.png" height="140" width="140"/></router-link>
-    <p>点击图片返回主界面</p>
+    <router-link to="/">
+      <p>点击返回主界面</p>
+    </router-link>
   </div>
 </template>
 
@@ -12,5 +13,9 @@
 </script>
 
 <style scoped>
+  p{
+    color: white;
+    background: #16418a;
+  }
 
 </style>

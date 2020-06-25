@@ -50,7 +50,7 @@ export default new Router({
       name: 'Login',
       component: Login
     }, {
-      path: '/detail',
+      path: '/Detail',
       name: 'Detail',
       component: Detail
     }

@@ -1,37 +1,43 @@
 <template>
-    <div>
-      <router-link to="/" tag="div" class="header-back" v-show="!showtitle">
+  <div>
+    <router-link to="/" tag="div" class="header-back" v-show="!showtitle">
+      <img class="img-back" src="../../../assets/images/back.png">
+    </router-link>
+    <div class="header-title" v-show="showtitle" :style="opacityStyle">
+      <router-link to="/" tag="div">
         <img class="img-back" src="../../../assets/images/back.png">
       </router-link>
-      <div class="header-title"v-show="showtitle">
-        <router-link to="/" tag="div">
-          <img class="img-back" src="../../../assets/images/back.png">
-        </router-link>
-        <div class="header-title-content">新闻详情</div>
-      </div>
+      <div class="header-title-content">新闻详情</div>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'Header',
-    data(){
-      return{
-        showtitle:false
-      }
-    },
-    methods:{
-      handleScroll () {
-        var scrollTop = document.documentElement.scrollTop;
-        if (scrollTop>70){
-            this.showtitle=true;
-        }else{
-          this.showtitle=false;
+    data () {
+      return {
+        showtitle: false,
+        opacityStyle: {
+          opacity: 0
         }
       }
     },
-    created(){
-      window.addEventListener('scroll',this.handleScroll)
+    methods: {
+      handleScroll () {
+        var scrollTop = document.documentElement.scrollTop
+        if (scrollTop > 50) {
+          let opacity = scrollTop / 120
+          opacity = opacity > 1 ? 1:opacity
+            this.opacityStyle = {opacity}
+          this.showtitle = true
+        } else {
+          this.showtitle = false
+        }
+      }
+    },
+    created () {
+      window.addEventListener('scroll', this.handleScroll)
     }
   }
 </script>

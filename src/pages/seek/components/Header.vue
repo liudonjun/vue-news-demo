@@ -2,7 +2,7 @@
   <div class="header border-bottom">
     <div class="header-input">
       <input placeholder="输入需要搜索的新闻">
-      <div class="iconfont select">&#xe7b8;</div>
+      <div class="iconfont select" @click="getenwslist(content)">&#xe7b8;</div>
     </div>
     <router-link to="/">
     <div class="cancel">取消</div>
@@ -12,7 +12,22 @@
 
 <script>
   export default {
-    name: 'Header'
+    name: 'Header',
+    data(){
+      return{
+        data:[]
+      }
+    },
+    mounted () {
+      // https://api.jisuapi.com/news/search?keyword=姚明&appkey=8f2abc867fcf2aa5
+      this.$axios.get('news/search?keyword=姚明&appkey=8f2abc867fcf2aa5')
+        .then(response => (
+          this.data = response.data.result.list
+        ))
+        .catch(function (error) { // 请求失败处理
+          console.log(error)
+        })
+    }
   }
 </script>
 

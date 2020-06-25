@@ -5,11 +5,13 @@
     <div class="detail">
       <div class="title">我是标题</div>
       <div class="item-bottom">
-        <p class="item-writer">weqewqwe</p>
-        <p class="item-updata">qweqwe</p>
+        <p class="item-writer">新浪新闻</p>
+        <p class="item-updata">2020.06.24</p>
       </div>
-      <div class="content">我是内容</div>
+      <div class="content">假装这是内容</div>
     </div>
+    <div>{{newsDetail}}</div>
+    <div v-html="content"></div>
   </div>
 </template>
 
@@ -18,9 +20,19 @@
 
   export default {
     name: 'Detail',
+    data(){
+      return{
+        newsDetail:[],
+      }
+    },
+    created() {
+      this.content = this.$route.query.newsdetail;
+      console.log(this.content)
+    },
     components: {
       DetailHeader
-    }
+    },
+    props:['content']
   }
 </script>
 
@@ -44,8 +56,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-right: 8rem;
-    /*background: #f8f8f8;*/
-    /*background: red;*/
+    background: #f8f8f8;
     border-left: .5rem solid #0197fe;
   }
 
