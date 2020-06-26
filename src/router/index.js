@@ -3,7 +3,12 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Seek from '@/pages/seek/Seek'
 import Login from '@/pages/login/Login'
-import Detail from '@/pages/detail/Detail'
+import TopDetail from '@/pages/detail/TopDetail'
+import CjDetail from '@/pages/cjdetail/CjDetail'
+import TyDetail from '@/pages/tydetail/TyDetail'
+import YlDetail from '@/pages/yldetail/YlDetail'
+import JsDetail from '@/pages/Jsdetail/JsDetail'
+import SwiperDetail from '@/pages/Swiperdetail/SwiperDetail'
 import TopNews from '@/pages/home/components/TopNews'
 import TyNews from '@/pages/home/components/TyNews'
 import YlNews from '@/pages/home/components/YlNews'
@@ -50,9 +55,29 @@ export default new Router({
       name: 'Login',
       component: Login
     }, {
-      path: '/Detail',
-      name: 'Detail',
-      component: Detail
+      path: '/TopDetail/:index',
+      name: 'TopDetail',
+      component: TopDetail
+    }, {
+      path: '/CjDetail/:index',
+      name: 'CjDetail',
+      component: CjDetail
+    }, {
+      path: '/TyDetail/:index',
+      name: 'TyDetail',
+      component: TyDetail
+    }, {
+      path: '/YlDetail/:index',
+      name: 'YlDetail',
+      component: YlDetail
+    }, {
+      path: '/JsDetail/:index',
+      name: 'JsDetail',
+      component: JsDetail
+    }, {
+      path: '/SwiperDetail/:index',
+      name: 'SwiperDetail',
+      component: SwiperDetail
     }
   ]
 })

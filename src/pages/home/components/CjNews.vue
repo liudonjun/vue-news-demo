@@ -3,7 +3,12 @@
   <div class="pd6"></div>
     <div>
       <ul>
-        <li class="item border-bottom" v-for="(item,index) of data" :key="index">
+        <router-link
+          class="item border-bottom"
+          v-for="(item,index) of data"
+          :to="'/CjDetail/'+index"
+          tag="li"
+          :key="index">
           <img class="item-img" :src="item.pic">
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -12,7 +17,7 @@
               <p class="item-updata">{{item.time}}</p>
             </div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
@@ -27,7 +32,7 @@
       }
     },
     mounted () {
-      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=8f2abc867fcf2aa5')
+      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=202e0b3f219ee76b')
         .then(response => (
           this.data = response.data.result.list
         ))

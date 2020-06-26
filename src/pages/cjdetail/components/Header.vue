@@ -1,10 +1,10 @@
 <template>
   <div>
-    <router-link to="/" tag="div" class="header-back" v-show="!showtitle">
+    <router-link to="/CjNews" tag="div" class="header-back" v-show="!showtitle">
       <img class="img-back" src="../../../assets/images/back.png">
     </router-link>
     <div class="header-title" v-show="showtitle" :style="opacityStyle">
-      <router-link to="/" tag="div">
+      <router-link to="/CjNews" tag="div">
         <img class="img-back" src="../../../assets/images/back.png">
       </router-link>
       <div class="header-title-content">新闻详情</div>

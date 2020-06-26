@@ -3,7 +3,12 @@
     <div class="pd6"></div>
     <div>
       <ul>
-        <li class="item border-bottom" v-for="(item,index) of data" :key="index">
+        <router-link
+          class="item border-bottom"
+          v-for="(item,index) of data"
+          :to="'/JsDetail/'+index"
+          tag="li"
+          :key="index">
           <img class="item-img" :src="item.pic">
           <div class="item-info">
             <p class="item-title">{{item.title}}</p>
@@ -12,7 +17,7 @@
               <p class="item-updata">{{item.time}}</p>
             </div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
