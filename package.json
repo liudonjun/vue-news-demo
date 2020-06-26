@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "bootstrap3": "^3.3.5",
     "fastclick": "^1.0.6",
+    "hydrogen-js-sdk": "^2.2.4",
     "jquery": "^3.5.1",
     "swiper": "^5.4.2",
     "vue": "^2.5.2",
