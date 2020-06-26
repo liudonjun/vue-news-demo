@@ -1,21 +1,21 @@
 <template>
   <div>
-    <router-link to="/">
-      <p>点击返回主界面</p>
-    </router-link>
+    <login-header></login-header>
+    <item></item>
   </div>
 </template>
 
 <script>
+  import LoginHeader from './components/Header'
+  import Item from './components/Item'
   export default {
-    name: 'Login'
+    name: 'Login',
+    components: {
+      LoginHeader, Item
+    }
   }
 </script>
 
 <style scoped>
-  p{
-    color: white;
-    background: #16418a;
-  }
 
 </style>

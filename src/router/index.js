@@ -14,6 +14,9 @@ import TyNews from '@/pages/home/components/TyNews'
 import YlNews from '@/pages/home/components/YlNews'
 import CjNews from '@/pages/home/components/CjNews'
 import JsNews from '@/pages/home/components/JsNews'
+import Register from '@/pages/register/Register'
+import Enroll from '@/pages/enroll/Enroll'
+import Forget from '@/pages/forget/Forget'
 
 Vue.use(Router)
 
@@ -78,6 +81,18 @@ export default new Router({
       path: '/SwiperDetail/:index',
       name: 'SwiperDetail',
       component: SwiperDetail
+    }, {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    }, {
+      path: '/enroll',
+      name: 'Enroll',
+      component: Enroll
+    }, {
+      path: '/forget',
+      name: 'Forget',
+      component: Forget
     }
   ]
 })
