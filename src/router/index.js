@@ -17,6 +17,8 @@ import JsNews from '@/pages/home/components/JsNews'
 import Register from '@/pages/register/Register'
 import Enroll from '@/pages/enroll/Enroll'
 import Forget from '@/pages/forget/Forget'
+import Feedback from '@/pages/feedback/Feedback'
+import Information from '@/pages/information/Information'
 
 Vue.use(Router)
 
@@ -56,7 +58,8 @@ export default new Router({
     }, {
       path: '/Login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {auth: true}
     }, {
       path: '/TopDetail/:index',
       name: 'TopDetail',
@@ -93,6 +96,14 @@ export default new Router({
       path: '/forget',
       name: 'Forget',
       component: Forget
+    }, {
+      path: '/feedback',
+      name: 'Feedback',
+      component: Feedback
+    }, {
+      path: '/information',
+      name: 'Information',
+      component: Information
     }
   ]
 })

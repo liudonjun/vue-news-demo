@@ -24,6 +24,11 @@
         var usename = document.getElementById('account').value
         var password = document.getElementById('password').value
         var code = document.getElementById('phone').value
+        if (usename === '' || password === '') {
+          alert('手机号、密码、验证码不能为空')
+        } else if (usename.length !== 11) {
+          alert('手机号输入有误！')
+        } else {
         let smsCode = code
         let data = {
           mobilePhoneNumber: usename
@@ -32,6 +37,7 @@
           let params = {
             username: usename,
             password: password,
+            nickname: '游客',
             phone: ''
           }
           Bmob.User.register(params).then(res => {
@@ -47,7 +53,7 @@
             alert('验证码错误')
             console.log(error)
           })
-
+      }
       },
       yanzheng: function () {
         var usename = document.getElementById('account').value

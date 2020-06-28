@@ -16,13 +16,26 @@
       submit: function () {
         var usename = document.getElementById('account').value
         var password = document.getElementById('password').value
+        var length = document.getElementById('account').value.length
+        if (usename === '' || password === '') {
+          alert('账号或密码不能为空')
+        } else if (length !== 11) {
+          alert('手机号输入有误！')
+        } else {
         Bmob.User.login(usename, password).then(res => {
           alert('登录成功')
+          localStorage.setItem('user', usename) // 把用户的信息保存到缓存
+          localStorage.setItem('objectId', res.objectId)
+          localStorage.setItem('nickname', res.nickname)
+          console.log(res.nickname)
+          let redirect = decodeURIComponent(this.$route.query.redirect || '/') // 获得路由携带的参数
+          this.$router.push({path: redirect})
           console.log(res)
         }).catch(err => {
           alert('账号或密码错误')
           console.log(err)
         })
+        }
       }
     }
   }

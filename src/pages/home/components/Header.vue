@@ -16,17 +16,18 @@
 </template>
 
 <script>
+  import router from 'vue-router'
   export default {
     name: 'Header',
     methods: {
-      backTop() {
+      backTop () {
         // document.body.scrollTop = 0
         // document.documentElement.scrollTop = 0
-        var doc= document.documentElement;
+        var doc = document.documentElement;
         $(doc).animate({
-          scrollTop:0,
-          height:'slideUp'
-        },500)
+          scrollTop: 0,
+          height: 'slideUp'
+        }, 500)
       }
     }
   }

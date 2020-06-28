@@ -21,30 +21,40 @@
     name: 'Center',
     methods: {
       submit: function () {
-        var usename = document.getElementById('account').value
         var password = document.getElementById('password').value
         var code = document.getElementById('phone').value
-        let smsCode = code
-        let data = {
-          password: password
+        if (password === '' || code === '') {
+          alert('验证码、新密码不能为空！')
+        } else {
+          let smsCode = code
+          let data = {
+            password: password
+          }
+          Bmob.resetPasswordBySmsCode(smsCode, data).then(res => {
+            alert('修改密码成功')
+            console.log(res)
+          }).catch(err => {
+            alert('验证码错误！')
+            console.log(err)
+          })
         }
-        Bmob.resetPasswordBySmsCode(smsCode, data).then(res => {
-          console.log(res)
-        }).catch(err => {
-          console.log(err)
-        })
       },
       yanzheng: function () {
         var usename = document.getElementById('account').value
-        let phone = {
-          mobilePhoneNumber: usename
-        }
-        Bmob.requestSmsCode(phone).then(function (response) {
-          console.log(response)
-        })
-          .catch(function (error) {
-            console.log(error)
+        if (usename === '') {
+          alert('手机号不能为空！')
+        } else {
+          let phone = {
+            mobilePhoneNumber: usename
+          }
+          Bmob.requestSmsCode(phone).then(function (response) {
+            console.log(response)
           })
+            .catch(function (error) {
+              console.log(error)
+            })
+        }
+
       }
     }
   }

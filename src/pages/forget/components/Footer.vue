@@ -1,7 +1,7 @@
 <template>
     <div class="body">
-        <router-link to="/register"><p class="text01">登录</p></router-link>
-      <router-link to="/enroll"><p class="text02">注册</p></router-link>
+        <p class="text01"><router-link to="/register" style="color: white;">登录</router-link></p>
+      <p class="text02"><router-link to="/enroll" style="color:#4eb6fe ;">注册</router-link></p>
     </div>
 </template>
 
@@ -25,11 +25,9 @@
   .text01{
     margin-top: 160px;
     margin-left:35px ;
-    color: white;
   }
   .text02{
     margin-top: 160px;
     margin-left: 220px;
-    color:#4eb6fe ;
   }
 </style>
