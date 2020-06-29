@@ -14,7 +14,6 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 import axios from 'axios'
 import Bmob from 'hydrogen-js-sdk'
-import Vuex from 'vuex'
 
 // 初始化
 Bmob.initialize('5baa52ee149cc61c', '123456')

@@ -81,7 +81,7 @@ export default new Router({
       name: 'JsDetail',
       component: JsDetail
     }, {
-      path: '/SwiperDetail/:index',
+      path: '/SwiperDetail/:keyword/:index',
       name: 'SwiperDetail',
       component: SwiperDetail
     }, {

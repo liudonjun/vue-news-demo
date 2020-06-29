@@ -14,20 +14,22 @@
 </template>
 
 <script>
-  import DetailHeader from '../Tydetail/components/Header'
+  import DetailHeader from '../swiperdetail/components/Header'
   export default {
     name: 'SwiperDetail',
     data () {
       return {
         index: this.$route.params.index,
+        keyword:this.$route.params.keyword,
         newsDetail: [],
       }
     },
     components:{
       DetailHeader
     },
-    mounted () {
-      this.$axios.get('news/get?channel=教育&start=0&num=20&appkey=202e0b3f219ee76b')
+     mounted() {
+      console.log(this.index+"--------"+this.keyword)
+      this.$axios.get('news/search?keyword=' + this.keyword + '&appkey=9a278a868ae2a55f')
         .then(response => (
           this.newsDetail = response.data.result.list[this.index]
         ))
