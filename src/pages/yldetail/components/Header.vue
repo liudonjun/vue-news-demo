@@ -8,7 +8,6 @@
         <img class="img-back" src="../../../assets/images/back.png">
       </router-link>
       <div class="header-title-content">新闻详情</div>
-      <div class="collent" v-on:click="shoucang"><img src="../../../assets/images/collect2.png" width="36px" height="36px" id="img"></div>
     </div>
   </div>
 </template>
