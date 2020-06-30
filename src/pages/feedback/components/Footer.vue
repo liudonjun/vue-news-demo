@@ -14,6 +14,6 @@ div{
   font-size: 12px;
   color:darkgray;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 </style>

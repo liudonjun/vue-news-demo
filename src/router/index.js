@@ -14,11 +14,14 @@ import TyNews from '@/pages/home/components/TyNews'
 import YlNews from '@/pages/home/components/YlNews'
 import CjNews from '@/pages/home/components/CjNews'
 import JsNews from '@/pages/home/components/JsNews'
-import Register from '@/pages/register/Register'
-import Enroll from '@/pages/enroll/Enroll'
-import Forget from '@/pages/forget/Forget'
-import Feedback from '@/pages/feedback/Feedback'
-import Information from '@/pages/information/Information'
+import Register from '../pages/register/Register'
+import Enroll from '../pages/enroll/Enroll'
+import Forget from '../pages/forget/Forget'
+import Feedback from '../pages/feedback/Feedback'
+import Information from '../pages/information/Information'
+import Feedbacktable from '../pages/feedbacktable/Feedbacktable'
+import Collect from '../pages/collect/Collect'
+import Collectdetail from '../pages/collectdetail/Collectdetail'
 
 Vue.use(Router)
 
@@ -104,6 +107,18 @@ export default new Router({
       path: '/information',
       name: 'Information',
       component: Information
+    }, {
+      path: '/feedbacktable',
+      name: 'Feedbacktable',
+      component: Feedbacktable
+    }, {
+      path: '/collect',
+      name: 'Collect',
+      component: Collect
+    },{
+      path: '/collectdetail',
+      name: 'Collectdetail',
+      component: Collectdetail
     }
   ]
 })

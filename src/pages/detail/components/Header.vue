@@ -76,5 +76,9 @@
     color: white;
     text-align: center;
   }
-
+  .collent{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
 </style>

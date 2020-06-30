@@ -32,7 +32,7 @@
       }
     },
     mounted () {
-      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=202e0b3f219ee76b')
+      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=2deae84444e749f0')
         .then(response => (
           this.data = response.data.result.list
         ))

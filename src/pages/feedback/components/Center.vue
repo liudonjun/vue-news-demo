@@ -2,6 +2,7 @@
     <div class="body">
       <textarea id="feedback" class="form-control" placeholder="请输入您的意见，方便我们改进产品！"></textarea>
        <div id="commit" v-on:click="fasong">发送</div>
+      <p><router-link to="/feedbacktable">反馈列表</router-link></p>
     </div>
 </template>
 
@@ -39,7 +40,7 @@
     border-radius: 20px;
   }
   #commit{
-    width: 70px;
+    width: 25%;
     height: 40px;
     background: #0197fe;
     color: white;
@@ -47,6 +48,11 @@
     line-height: 40px;
     text-align: center;
     border-radius: 8px;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-left: 37.5%;
+  }
+  p{
+    text-align: center;
+    margin-top: 40px;
   }
 </style>

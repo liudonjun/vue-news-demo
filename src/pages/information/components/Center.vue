@@ -29,13 +29,11 @@
       methods: {
           update: function () {
             const query = Bmob.Query('_User')
-            var id = localStorage.getItem('objectId')
-            query.get(id).then(res => {
-              document.getElementById('nickname').value = res.nickname
-              document.getElementById('phone').value = res.username
+            query.equalTo("username","==", localStorage.getItem('user'))
+            query.find().then(res => {
+              document.getElementById('nickname').value = res[0].nickname
+              document.getElementById('phone').value = res[0].username
               console.log(res)
-            }).catch(err => {
-              console.log(err)
             })
           },
           xiugai: function () {

@@ -1,9 +1,9 @@
 <template>
     <div class="items">
-      <router-link to=""><div class="tab"><img src="../../../assets/images/Favorite_icon.png" width="45px" height="45px"><p>我的收藏</p></div></router-link>
-      <router-link to=""><div class="tab"><img src="../../../assets/images/Comment_icon.png" width="45px" height="45px"><p>我的评论</p></div></router-link>
-      <router-link to="/feedback"><div class="tab"><img src="../../../assets/images/Feedback_icon.png" width="45px" height="45px"><p>意见反馈</p></div></router-link>
+      <router-link to="/collect"><div class="tab"><img src="../../../assets/images/Favorite_icon.png" width="45px" height="45px"><p>我的收藏</p></div>
+      </router-link><router-link to="/feedback"><div class="tab"><img src="../../../assets/images/Feedback_icon.png" width="45px" height="45px"><p>意见反馈</p></div></router-link>
       <router-link to="/information"><div class="tab"><img src="../../../assets/images/Change_password_icon.png" width="45px" height="45px"><p>修改资料</p></div></router-link>
+      <router-link to="/"><div class="tab"><img src="../../../assets/images/shouye.png" width="40px" height="40px"><p>返回首页</p></div></router-link>
       <div class="exit" v-on:click="exit"></div>
     </div>
 </template>
