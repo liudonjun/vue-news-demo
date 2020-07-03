@@ -21,6 +21,7 @@
     name: 'Center',
     methods: {
       submit: function () {
+        var username =document.getElementById('account').value
         var password = document.getElementById('password').value
         var code = document.getElementById('phone').value
         if (password === '' || code === '') {
@@ -28,15 +29,28 @@
         } else {
           let smsCode = code
           let data = {
-            password: password
+            mobilePhoneNumber: username
           }
-          Bmob.resetPasswordBySmsCode(smsCode, data).then(res => {
-            alert('修改密码成功')
-            console.log(res)
-          }).catch(err => {
-            alert('验证码错误！')
-            console.log(err)
+          Bmob.verifySmsCode(smsCode, data).then(function (response) {
+            const query = Bmob.Query("_User");
+            query.equalTo("username","==", username);
+            query.find().then(res => {
+              query.get(res[0].objectId).then(res => {
+                console.log(res)
+                res.set('password',password)
+                res.save()
+                alert('修改成功！')
+              }).catch(err => {
+                console.log(err)
+              })
+              console.log(res)
+            })
+            console.log(response);
           })
+            .catch(function (error) {
+              alert('验证码错误！')
+              console.log(error);
+            })
         }
       },
       yanzheng: function () {
@@ -48,6 +62,7 @@
             mobilePhoneNumber: usename
           }
           Bmob.requestSmsCode(phone).then(function (response) {
+            alert('验证码已发送！')
             console.log(response)
           })
             .catch(function (error) {

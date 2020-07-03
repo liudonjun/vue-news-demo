@@ -4,7 +4,7 @@
       <p class="name2">当前所在页面为：Information</p>
       <p class="name3">修改资料</p>
     </div>
-    <div class="photo"></div>
+    <router-link to="/login"><div class="photo"></div></router-link>
   </div>
 </template>
 

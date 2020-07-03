@@ -16,7 +16,7 @@ import axios from 'axios'
 import Bmob from 'hydrogen-js-sdk'
 
 // 初始化
-Bmob.initialize('5baa52ee149cc61c', '123456')
+Bmob.initialize('5baa52ee149cc61c','123456','5a5681343d697a4ea0b6364166fe003c')
 // 挂载到全局使用
 Vue.prototype.Bmob = Bmob
 // 挂载到全局使用
@@ -36,7 +36,7 @@ router.beforeEach((to, from, next) => {
        path: '/register',
        query: {
          redirect: to.fullPath // 把要跳的路径作为参数传到登录页面
-       }
+       },
      })
    }
   } else {

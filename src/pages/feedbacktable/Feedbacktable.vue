@@ -7,7 +7,7 @@
       <ul style="width: 80%;margin: 0px auto;">
         <li id="table" v-for="text of feedbacks">
           <div id="text">{{text.feedback}}</div>
-          <div id="author">— —{{text.nickname}}</div>
+          <div id="author">— — {{text.nickname}}</div>
           <div id="time">{{text.createdAt}}</div>
           <hr>
         </li>
@@ -27,6 +27,7 @@
         const query = Bmob.Query("tb_feedback");
         query.find().then(res => {
           this.feedbacks=res
+          console.log("昵称："+this.feedbacks.nickname)
           console.log(res)
         });
       }

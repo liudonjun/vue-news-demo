@@ -4,7 +4,7 @@
       <p class="name2">当前所在页面为：Feedback</p>
       <p class="name3">意见反馈</p>
     </div>
-    <div class="photo"></div>
+    <router-link to="/login"><div class="photo"></div></router-link>
   </div>
 </template>
 

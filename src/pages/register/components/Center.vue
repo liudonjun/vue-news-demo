@@ -25,10 +25,17 @@
         Bmob.User.login(usename, password).then(res => {
           alert('登录成功')
           localStorage.setItem('user', usename) // 把用户的信息保存到缓存
+          localStorage.setItem('objectId',res.objectId)
           localStorage.setItem('nickname', res.nickname)
-          console.log(res.nickname)
+          let code =this.$route.query.code
           let redirect = decodeURIComponent(this.$route.query.redirect || '/') // 获得路由携带的参数
-          this.$router.push({path: redirect})
+          console.log("code:"+code)
+          console.log("redirect:"+redirect)
+          if (code !==undefined){
+            this.$router.back()
+          } else {
+            this.$router.push({path: redirect})//路由跳转
+          }
           console.log(res)
         }).catch(err => {
           alert('账号或密码错误')

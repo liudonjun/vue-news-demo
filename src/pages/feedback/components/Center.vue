@@ -17,6 +17,7 @@
             const query = Bmob.Query('tb_feedback')
             query.set('name', name)
             query.set('feedback', text)
+            query.set('nickname',localStorage.getItem('nickname'))
             query.save().then(res => {
               alert('发送成功')
               console.log(res)

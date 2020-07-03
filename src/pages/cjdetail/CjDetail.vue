@@ -17,6 +17,7 @@
 <script>
   import DetailHeader from '../cjdetail/components/Header'
   import Bmob from 'hydrogen-js-sdk'
+  import Register from "../register/Register";
   export default {
     name: 'CjDetail',
     data () {
@@ -31,7 +32,7 @@
       DetailHeader
     },
     mounted () {
-      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=2deae84444e749f0')
+      this.$axios.get('news/get?channel=财经&start=0&num=20&appkey=019edfd7e2c45c72')
         .then(response => (
           this.newsDetail = response.data.result.list[this.index]
         ))
@@ -41,12 +42,12 @@
     },
     methods:{
       shoucang:function () {
-        var a=this.newsDetail
         var username=localStorage.getItem('user')
         const query = Bmob.Query('tb_collect')
         var b=localStorage.getItem('code')
         if(localStorage.getItem('user')){
           if (b==1){
+            var a=this.newsDetail
             if (this.num%2==1){
               query.set("username",username)
               query.set("img",a.pic)
@@ -75,12 +76,11 @@
             }
           }else if (b==2) {
             var a=this.newsDetail
-            const query = Bmob.Query('tb_collect')
-            query.equalTo("title","==", a.title)
-            query.find().then(res => {
-              this.id=res[0].objectId
-              console.log("num:"+this.num)
-              if (this.num%2==0){
+            if (this.num%2==1){
+              const query = Bmob.Query('tb_collect')
+              query.equalTo("title","==", a.title)
+              query.find().then(res => {
+                this.id=res[0].objectId
                 query.destroy(this.id).then(res => {
                   document.getElementById('collect').innerText='收藏'
                   alert('已取消收藏')
@@ -89,29 +89,30 @@
                   alert('取消收藏失败')
                   console.log(err)
                 })
-              }else if (this.num%2==1){
-                query.set("username",username)
-                query.set("img",a.pic)
-                query.set("title",a.title)
-                query.set("address",a.src)
-                query.set("news",a.content)
-                query.set("time",a.time)
-                query.save().then(res => {
-                  document.getElementById('collect').innerText='取消收藏'
-                  alert('收藏成功')
-                  console.log(res)
-                }).catch(err => {
-                  alert('收藏失败')
-                  console.log(err)
-                })
-              }
-              console.log("id内:"+this.id)
-              console.log(res)
-            })
+                console.log(res)
+              })
+            }
+            if (this.num%2==0){
+              query.set("username",username)
+              query.set("img",a.pic)
+              query.set("title",a.title)
+              query.set("address",a.src)
+              query.set("news",a.content)
+              query.set("time",a.time)
+              query.save().then(res => {
+                document.getElementById('collect').innerText='取消收藏'
+                alert('收藏成功')
+                console.log(res)
+              }).catch(err => {
+                alert('收藏失败')
+                console.log(err)
+              })
+            }
           }
           this.num++
         }else {
-          alert('你当前还没有登录请先登录')
+          alert('你当前还没有登录,请先登录!')
+          this.$router.push({path:'/register',query:{code:1}})
           }
       },
       update:function () {

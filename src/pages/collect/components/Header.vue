@@ -4,7 +4,7 @@
       <p class="name2">当前所在页面为：Collect</p>
       <p class="name3">我的收藏</p>
     </div>
-    <div class="photo"></div>
+    <router-link to="/login"><div class="photo"></div></router-link>
   </div>
 </template>
 

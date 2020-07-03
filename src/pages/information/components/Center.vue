@@ -2,7 +2,7 @@
     <div class="body">
       <div style="width: 50%">
         <p>昵称</p>
-        <input type="text" id="nickname" class="form-control text">
+        <input type="text" id="nickname" class="form-control text" maxlength="4">
       </div>
       <p style="margin-top: 15px">注册手机号</p>
       <input type="text" id="phone" class="form-control text">
@@ -23,6 +23,11 @@
   import Bmob from 'hydrogen-js-sdk'
     export default {
         name: 'Center',
+      data(){
+          return{
+            data:[]
+          }
+      },
       created: function () {
         this.update()
       },
@@ -33,6 +38,7 @@
             query.find().then(res => {
               document.getElementById('nickname').value = res[0].nickname
               document.getElementById('phone').value = res[0].username
+              this.data=res[0]
               console.log(res)
             })
           },
@@ -46,7 +52,8 @@
             } else if (oldpassword !== '' && newpassword === '') {
               alert('新密码不能为空！')
             } else if (oldpassword !== '' && newpassword !== '') {
-              let objectId = localStorage.getItem('objectId')
+              var id=localStorage.getItem('objectId')
+              let objectId = id
               let data = {
                 oldPassword: oldpassword,
                 newPassword: newpassword
@@ -57,25 +64,29 @@
                 this.$router.push({path: '/'})
                 console.log(res)
               }).catch(err => {
+                alert('旧密码错误！')
                 console.log(err)
               })
             }
             if (nickname === '' || phone === '') {
               alert('昵称、手机号不能为空！')
-            } else if (nickname !== '' && phone === '') {
-              var objectId = localStorage.getItem('objectId')
-              const query = Bmob.Query('_User')
-              query.get(objectId).then(res => {
-                res.set('nickname', nickname)
-                res.set('username', phone)
-                res.save()
-                console.log(res)
-                alert('检测到当前账户信息发生改变，请重新登录！')
-                Bmob.User.logout()
-                this.$router.push({path: '/'})
-              }).catch(err => {
-                console.log(err)
-              })
+            } else if (nickname !== '' && phone !== '') {
+              if (nickname !== this.data.nickname || phone!==this.data.username){
+                var objectId = localStorage.getItem('objectId')
+                const query = Bmob.Query('_User')
+                query.get(objectId).then(res => {
+                  res.set('nickname', nickname)
+                  res.set('username', phone)
+                  res.save()
+                  console.log(res)
+                  alert('检测到当前账户信息发生改变，请重新登录！')
+                  Bmob.User.logout()
+                  this.$router.push({path: '/'})
+                }).catch(err => {
+                  alert('修改失败')
+                  console.log(err)
+                })
+              }
             }
           }
       }
