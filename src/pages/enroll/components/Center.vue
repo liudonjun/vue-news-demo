@@ -28,7 +28,9 @@
           alert('手机号、密码、验证码不能为空')
         } else if (usename.length !== 11) {
           alert('手机号输入有误！')
-        } else {
+        } else if (password.length<6 ||password.length>16){
+          alert('密码的长度必须为6-16字符、数字或字母！')
+        }else{
         let smsCode = code
         let data = {
           mobilePhoneNumber: usename

@@ -24,9 +24,11 @@
         var username =document.getElementById('account').value
         var password = document.getElementById('password').value
         var code = document.getElementById('phone').value
-        if (password === '' || code === '') {
-          alert('验证码、新密码不能为空！')
-        } else {
+        if (password === '' || code === '' || username ==='') {
+          alert('手机号、验证码、新密码不能为空！')
+        } else if (password.length<6 ||password.length>16){
+          alert('密码的长度必须为6-16字符、数字或字母！')
+        }else{
           let smsCode = code
           let data = {
             mobilePhoneNumber: username
@@ -57,9 +59,12 @@
         var usename = document.getElementById('account').value
         if (usename === '') {
           alert('手机号不能为空！')
-        } else {
+        } else if (usename.length !== 11) {
+          alert('手机号输入有误！')
+        }else {
           let phone = {
-            mobilePhoneNumber: usename
+            mobilePhoneNumber: usename,
+            // template:'forget'
           }
           Bmob.requestSmsCode(phone).then(function (response) {
             alert('验证码已发送！')
@@ -69,7 +74,6 @@
               console.log(error)
             })
         }
-
       }
     }
   }

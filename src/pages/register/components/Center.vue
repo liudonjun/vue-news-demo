@@ -16,12 +16,13 @@
       submit: function () {
         var usename = document.getElementById('account').value
         var password = document.getElementById('password').value
-        var length = document.getElementById('account').value.length
         if (usename === '' || password === '') {
           alert('账号或密码不能为空')
-        } else if (length !== 11) {
+        } else if (usename.length !== 11) {
           alert('手机号输入有误！')
-        } else {
+        } else if (password.length<6 ||password.length>16){
+          alert('密码的长度必须为6-16字符、数字或字母！')
+        }else {
         Bmob.User.login(usename, password).then(res => {
           alert('登录成功')
           localStorage.setItem('user', usename) // 把用户的信息保存到缓存
