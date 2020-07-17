@@ -32,7 +32,7 @@
     },
      mounted() {
       console.log(this.index+"--------"+this.keyword)
-      this.$axios.get('news/search?keyword=' + this.keyword + '&appkey=9a278a868ae2a55f')
+      this.$axios.get('news/search?keyword=' + this.keyword + '&appkey=2deae84444e749f0')
         .then(response => (
           this.newsDetail = response.data.result.list[this.index]
         ))

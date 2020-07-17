@@ -1,7 +1,9 @@
-# news
+# 水滴新闻
 
 > A Vue.js project
-
+####数据源
+>没有数据请切换自己的Key
+>极速数据https://www.jisuapi.com/api/news/
 ## Build Setup
 
 ``` bash

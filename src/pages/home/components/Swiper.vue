@@ -30,7 +30,7 @@
       }
     },
     mounted () {
-      this.$axios.get('news/get?channel=教育&start=0&num=5&appkey=8f2abc867fcf2aa5')
+      this.$axios.get('news/get?channel=教育&start=0&num=5&appkey=2deae84444e749f0')
         .then(response => (
           this.swiperlist = response.data.result.list
         ))
