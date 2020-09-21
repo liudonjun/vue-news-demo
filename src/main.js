@@ -16,7 +16,7 @@ import axios from 'axios'
 import Bmob from 'hydrogen-js-sdk'
 
 // 初始化
-Bmob.initialize('5baa52ee149cc61c','123456','5a5681343d697a4ea0b6364166fe003c')
+Bmob.initialize("你的Application ID","你的REST API Key","你的MasterKey");
 // 挂载到全局使用
 Vue.prototype.Bmob = Bmob
 // 挂载到全局使用
